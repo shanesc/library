@@ -26,6 +26,30 @@ function addBookToLibrary(book) {
   myLibrary.push(new Book(book));
 }
 
+function render(library) {
+  const libraryList = document.querySelector('.library');
+
+  library.forEach(book => {
+    const bookCard = document.createElement('div');
+    const title = document.createElement('span');
+    const info = document.createElement('div');
+    const author = document.createElement('span');
+    const pages = document.createElement('span');
+
+    title.textContent = book.title;
+    title.classList.add('book-card__title');
+    author.textContent = `By ${book.author}`;
+    author.classList.add('book-card__author');
+    pages.textContent = `${book.pages} pages`;
+    pages.classList.add('book-card__pages');
+    info.classList.add('book-card__info');
+    info.append(author, pages);
+    bookCard.append(title, info);
+    bookCard.classList.add('book-card');
+    libraryList.append(bookCard);
+  })
+}
+
 let myLibrary = [];
 
 addBookToLibrary({
@@ -44,4 +68,5 @@ addBookToLibrary({
   pages: 662,
 });
 
-console.log(myLibrary);
+render(myLibrary);
+
