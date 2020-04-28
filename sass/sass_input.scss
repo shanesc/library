@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Carrois+Gothic+SC&display=swap');
+
+$color-1: #FFEBCF;
+$color-2: #F1D1B5;
+$color-3: #F0B7A4;
+$color-4: #F18C8E;
+$color-5: hsl(197, 41%, 32%);
+$info-color: hsl(198, 18%, 64%);
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Carrois Gothic SC";
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: $color-5;
+  background-color: $color-2;
+}
+
+.book-card {
+  background-color: $color-1;
+  // min-width: 26rem;
+  height: 35rem;
+  padding: 3rem;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 8px 5px 10px rgba(0, 0, 0, .2);
+
+  &__title {
+    font: 2.4rem "Cardo";
+    padding-bottom: 1rem;
+  }
+  &__info {
+    color: $info-color;
+  }
+}
+
+/* FLEX LAYOUT */
+.library {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  flex: 0 1 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
