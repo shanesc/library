@@ -90,7 +90,6 @@ function addBookFromForm() {
 
 function toggleReadButton(event) {
   const index = Number(event.target.parentNode.getAttribute('data-index'));
-  // console.log(myLibrary[index]);
   myLibrary[index].toggleRead();
   storeLibrary();
 }
@@ -114,32 +113,33 @@ function loadLibrary() {
   if (!localStorage.length) return;
 
   const storedLibrary = JSON.parse(localStorage.getItem('library'));
-
   myLibrary = storedLibrary.map(book => new Book(book));
-  
   render(myLibrary);
 }
 
 let myLibrary = [];
 
-addBookToLibrary({
-  title: 'The Hobbit',
-  author: 'J.R.R. Tolkien',
-  pages: 265,
-});
-addBookToLibrary({
-  title: 'The Way of Kings',
-  author: 'Brandon Sanderson',
-  pages: 1007,
-});
-addBookToLibrary({
-  title: 'The Name of the Wind',
-  author: 'Patrick Rothfuss',
-  pages: 662,
-  hasRead: true
-});
-
-loadLibrary();
+if (!localStorage.length) {
+  
+  addBookToLibrary({
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    pages: 265,
+  });
+  addBookToLibrary({
+    title: 'The Way of Kings',
+    author: 'Brandon Sanderson',
+    pages: 1007,
+  });
+  addBookToLibrary({
+    title: 'The Name of the Wind',
+    author: 'Patrick Rothfuss',
+    pages: 662,
+    hasRead: true
+  });
+} else {
+  loadLibrary();
+}
 
 const addBookBtn = document.querySelector('.btn-add-book');
 const closeFormBtn = document.querySelector('.btn-close');
