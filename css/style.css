@@ -15,30 +15,152 @@ body {
   box-sizing: inherit;
 }
 
+button, input {
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  line-height: normal;
+  background: transparent;
+}
+
 body {
   font-family: "Carrois Gothic SC";
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1;
-  text-align: center;
   color: #306073;
   background-color: #F1D1B5;
+  padding: 2rem;
+}
+
+.library {
+  margin-bottom: 3rem;
 }
 
 .book-card {
+  position: relative;
   background-color: #FFEBCF;
   height: 35rem;
   padding: 3rem;
-  margin: 2rem;
+  padding-top: 5rem;
+  margin: 0 4rem 4rem 0;
   border-radius: 8px;
-  box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 5px 15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.book-card__btn-remove {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0.7rem;
+  font-size: 3rem;
+  line-height: 1;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.book-card__btn-remove:hover {
+  opacity: 0.7;
+}
+.book-card:hover .book-card__btn-remove {
+  display: block;
 }
 .book-card__title {
-  font: 2.4rem "Cardo";
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font: 3.4rem "Cardo";
+  line-height: 1.1;
+  letter-spacing: 0.1rem;
 }
-.book-card__info {
+.book-card__author {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
   color: #93aab4;
+}
+.book-card__pages {
+  opacity: 0;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #93aab4;
+}
+.book-card:hover .book-card__pages {
+  opacity: 0.6;
+}
+.book-card__read-tag {
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  text-transform: lowercase;
+  font-size: 1.8rem;
+  box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.book-card__read-tag--read {
+  background-color: #53c767;
+  color: #306073;
+}
+.book-card__read-tag--not-read {
+  background-color: #df8e46;
+  color: #F1D1B5;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  background-color: #306073;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: #F1D1B5;
+  cursor: pointer;
+}
+
+.btn-add-book {
+  display: block;
+}
+
+.form-popup {
+  display: none;
+}
+
+.form-add-book {
+  position: relative;
+  padding: 1.5rem;
+  width: 30rem;
+  background-color: #F0B7A4;
+  border-radius: 5px;
+  border: 3px solid #b6aeae;
+}
+.form-add-book h2 {
+  margin-bottom: 2rem;
+}
+.form-add-book label {
+  margin-bottom: 0.5rem;
+}
+.form-add-book input {
+  margin-bottom: 1rem;
+  background-color: #f0d0d0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.form-add-book input:focus {
+  outline: none;
+  background-color: #d3b7b7;
+}
+.form-add-book div {
+  margin-bottom: 1rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0.7rem;
+  font-size: 3.7rem;
+  line-height: 1;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  opacity: 1;
 }
 
 /* FLEX LAYOUT */
@@ -52,6 +174,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.book-card__read-tag {
+  align-self: center;
+}
+
+.form-add-book {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

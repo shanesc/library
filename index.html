@@ -8,26 +8,30 @@
 <body>
   <div class="library">
     <!-- <div class="book-card">
+      <button type="button" class="book-card__btn-remove">&times;</button>
       <span class="book-card__title">The Name of the Wind</span>
-      <div class="book-card__info">
-        <span class="book-card__author">By Patrick Rothfuss</span>
-        <span class="book-card__pages">662 pages</span>
-      </div>
-    </div>
-    <div class="book-card">
-      <span class="book-card__title">The Name of the Wind</span>
-      <div class="book-card__info">
-        <span class="book-card__author">By Patrick Rothfuss</span>
-        <span class="book-card__pages">662 pages</span>
-      </div>
-    </div>
-    <div class="book-card">
-      <span class="book-card__title">The Name of the Wind</span>
-      <div class="book-card__info">
-        <span class="book-card__author">By Patrick Rothfuss</span>
-        <span class="book-card__pages">662 pages</span>
-      </div>
+      <span class="book-card__author">Patrick Rothfuss</span>
+      <span class="book-card__pages">662 pages</span>
+      <button type="button" class="book-card__read-tag book-card__read-tag--not-read">Not Read</button>
     </div> -->
+  </div>
+  <button class="btn btn-add-book">Add Book</button>
+  <div class="form-popup">
+    <form action="#" class="form-add-book">
+      <h2>Add Book</h2>
+      <button type="button" class="btn-close">&times;</button>
+      <label for="ftitle">Title</label>
+      <input type="text" id="ftitle" placeholder="The Hobbit" name="title">
+      <label for="fauthor">Author</label>
+      <input type="text" id="fauthor" placeholder="J.R.R. Tolkien" name="author">
+      <label for="flength">Page Length</label>
+      <input type="text" id="flength" placeholder="265" name="length">
+      <div>
+        <label for="fread">Read</label>
+        <input type="checkbox" id="fread" name="read">
+      </div>
+      <button type="button" class="btn form-add-book__btn">Add Book</button>
+    </form>
   </div>
 
   <script src="app.js"></script>
